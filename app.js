@@ -13,11 +13,14 @@ function escapeHTML(str) {
 
 // 🔹 Chantiers Clean (nom affiché + adresse envoyée par email)
 const chantiersClean = [
-  { nom: "Résidence Les Lilas", adresse: "12 rue des Fleurs, 75010 Paris" },
-  { nom: "Immeuble Horizon", adresse: "8 avenue Victor Hugo, 75016 Paris" },
-  { nom: "Bureau Central", adresse: "25 boulevard Voltaire, 75011 Paris" },
-  { nom: "École Saint-Pierre", adresse: "3 rue Pasteur, 75015 Paris" },
-  { nom: "Clinique du Parc", adresse: "18 avenue du Parc, 75014 Paris" }
+  { nom: "AKROPOLIS", adresse: "Luitberg, 25  1853 Strombeek-Bever" },
+  { nom: "APOLLO 95-97", adresse: "Grotexinkellaan, 95-97  1853 Strombeek-Bever" },
+  { nom: "ECTA", adresse: "Rue de Trèves, 49-51  1040 Etterbeek" },
+  { nom: "EPHA", adresse: "Rue de Trèves, 49-51  1040 Etterbeek" },
+  { nom: "ERS", adresse: "Rue de Trèves, 49-51  1040 Etterbeek" },
+  { nom: "GROENDAL", adresse: "Sint-Annalaan,  74  1800 Vilvoorde" },
+  { nom: "STONE", adresse: "Steenstraat, 59  1800 Vilvoorde" },
+  { nom: "BWT", adresse: "Leuvensesteenweg, 633  1930 Zaventem" },
 ];
 
 // 🔹 Remplissage du menu déroulant
