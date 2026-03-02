@@ -12,13 +12,13 @@ function escapeHTML(str) {
 }
 
 // 🔹 Chantiers BE Clean (nom affiché + adresse envoyée par email)
-const chantiersBE Clean = [
+const chantiersBEClean = [
   { nom: "AKROPOLIS", adresse: "Luitberg, 25  1853 Strombeek-Bever" },
   { nom: "APOLLO 95-97", adresse: "Grotexinkellaan, 95-97  1853 Strombeek-Bever" },
   { nom: "ECTA", adresse: "Rue de Trèves, 49-51  1040 Etterbeek" },
   { nom: "EPHA", adresse: "Rue de Trèves, 49-51  1040 Etterbeek" },
   { nom: "ERS", adresse: "Rue de Trèves, 49-51  1040 Etterbeek" },
-  { nom: "GROENDAL", adresse: "Sint-Annalaan,  74  1800 Vilvoorde" },
+  { nom: "GROENDAL", adresse: "Sint-Annalaan, 74  1800 Vilvoorde" },
   { nom: "STONE", adresse: "Steenstraat, 59  1800 Vilvoorde" },
   { nom: "BWT", adresse: "Leuvensesteenweg, 633  1930 Zaventem" },
 ];
@@ -26,10 +26,10 @@ const chantiersBE Clean = [
 // 🔹 Remplissage du menu déroulant
 const chantierSelect = document.getElementById("chantier");
 
-chantiersBE Clean.forEach(c => {
+chantiersBEClean.forEach(c => {
   const option = document.createElement("option");
-  option.value = c.adresse;      // Adresse envoyée dans l'email
-  option.textContent = c.nom;    // Nom affiché à l'écran
+  option.value = c.adresse;      
+  option.textContent = c.nom;    
   chantierSelect.appendChild(option);
 });
 
@@ -133,7 +133,7 @@ document.getElementById("formCommande").addEventListener("submit", function(e) {
 
   let texteCommande = `
   <div style="font-family:Arial,sans-serif; background-color:#f2f2f2; padding:15px;">
-    <h2 style="text-align:center;">Nouvelle commande produits</h2>
+    <h2 style="text-align:center;">Nouvelle commande produits – BE Clean</h2>
     <p><strong>Société :</strong> ${societe}</p>
     <p><strong>Adresse chantier :</strong> ${chantier}</p>
     <p><strong>Nom :</strong> ${nom}</p>
