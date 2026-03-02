@@ -11,7 +11,7 @@ function escapeHTML(str) {
   });
 }
 
-// 🔹 Chantiers Clean (nom affiché + adresse envoyée par email)
+// 🔹 Chantiers BE Clean (nom affiché + adresse envoyée par email)
 const chantiersClean = [
   { nom: "AKROPOLIS", adresse: "Luitberg, 25  1853 Strombeek-Bever" },
   { nom: "APOLLO 95-97", adresse: "Grotexinkellaan, 95-97  1853 Strombeek-Bever" },
