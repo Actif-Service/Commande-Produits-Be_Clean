@@ -1,88 +1,155 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Commande de produits</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Commande de produits - BE Clean</title>
 
-  <style>
-    #envoyerCommande {
-      width: 100%;
-      padding: 16px;
-      font-size: 18px;
-      font-weight: bold;
-      background-color: #1976d2;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-    #envoyerCommande:active {
-      opacity: 0.8;
-    }
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
 
-    @media (max-width: 768px) {
-      #envoyerCommande {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        border-radius: 0;
-        z-index: 1000;
-      }
+h1 {
+  text-align: center;
+  color: #4CAF50;
+  margin-bottom: 30px;
+}
 
-      body {
-        padding-bottom: 90px;
-      }
-    }
-  </style>
+form {
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* 🔹 Ligne principale */
+.ligne-formulaire {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form-group input,
+.form-group select,
+textarea {
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* 🔹 Produits */
+#produits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.produit {
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.img-container {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.quantite-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  gap: 5px;
+}
+
+.quantite-container button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  height: 90px;
+  margin-top: 20px;
+}
+
+button[type="submit"] {
+  margin-top: 25px;
+  padding: 12px 25px;
+  font-size: 16px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button[type="submit"]:hover {
+  background: #43a047;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="logo-container">
-    <img src="images/logo.jpg" alt="Logo Actif Service" class="logo">
+<h1>Commande de produits</h1>
+
+<form id="formCommande">
+
+<div class="ligne-formulaire">
+
+  <div class="form-group">
+    <label>Nom de la société :</label>
+    <input type="text" value="BE Clean" readonly>
   </div>
 
-  <h1>Commande de produits</h1>
+  <div class="form-group">
+    <label>Chantier :</label>
+    <select id="chantier">
+      <option value="">-- Sélectionner un chantier --</option>
+    </select>
+  </div>
 
-  <form id="formCommande">
+  <div class="form-group">
+    <label>Votre nom :</label>
+    <input type="text" id="nom" placeholder="Votre nom">
+  </div>
 
-    <div class="form-group">
-      <label for="societe">Nom de la société :</label>
-      <input type="text" value="BE Clean" readonly>
-    </div>
+</div>
 
-    <div class="form-group">
-      <label for="chantier">Chantier :</label>
-      <select id="chantier" name="chantier" required>
-        <option value="">-- Sélectionner un chantier --</option>
-      </select>
-    </div>
+<div id="produits"></div>
 
-    <div class="form-group">
-      <label for="nom">Votre nom :</label>
-      <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-    </div>
+<button type="submit">Envoyer la commande</button>
 
-    <div id="produits"></div>
+</form>
 
-    <button type="submit" id="envoyerCommande">
-      Envoyer la commande
-    </button>
+<script src="script.js"></script>
 
-  </form>
-
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      emailjs.init("UIMYUuF1YijZh1DFI");
-    });
-  </script>
-
-  <script src="app.js" defer></script>
+<script>
+(function(){
+  emailjs.init("UIMYUuF1YijZh1DFI"); // ⚠️ Remplace par ton vrai USER ID EmailJS
+})();
+</script>
 
 </body>
 </html>
