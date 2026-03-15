@@ -113,7 +113,7 @@ let tableau=`
 
 <thead>
 <tr style="background:#1976d2;color:white">
-<th style="border:1px solid #ccc;padding:10px;text-align:left>Produit</th>
+<th style="border:1px solid #ccc;padding:10px;text-align:left">Produit</th>
 <th style="border:1px solid #ccc;padding:10px;text-align:center;width:80px">Qté</th>
 </tr>
 </thead>
@@ -133,7 +133,7 @@ const couleur=ligne%2===0?"#bbdefb":"#ffffff";
 tableau+=`
 <tr style="background:${couleur}">
 <td style="border:1px solid #ccc;padding:10px">${escapeHTML(input.dataset.nom)}</td>
-<td style="border:1px solid #ccc;padding:10px;text-align:center">${input.value}</td>
+<td style="border:1px solid #ccc;padding:10px;text-align:center;width:80px">${input.value}</td>
 </tr>
 `;
 
@@ -153,7 +153,7 @@ const messageHTML=`
 
 <td style="width:33%;text-align:left">
 <b>Société :</b> ${societe}<br>
-<b>Technicien(ne) :</b> ${nom}
+<b>Technicien :</b> ${nom}
 </td>
 
 <td style="width:33%;text-align:center">
