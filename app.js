@@ -20,7 +20,7 @@ const chantiersBEClean=[
 {nom:"BWT",adresse:"Leuvensesteenweg, 633 1930 Zaventem"}
 ];
 
-const produits=[ /* inchangé */
+const produits=[
 { nom: "Ajax citron", image: "https://actif-service.github.io/Commande-Produits/images/Ajax%20citron.jpg" },
 { nom: "Glass 2000 1 litre", image: "https://actif-service.github.io/Commande-Produits/images/Glass%202000%201%20litre.jpg" },
 { nom: "Sani-day 1 litre", image: "https://actif-service.github.io/Commande-Produits/images/Sani-day%201%20litre.jpg" },
@@ -64,6 +64,7 @@ chantierSelect.appendChild(option);
 });
 
 produits.forEach(p=>{
+
 const div=document.createElement("div");
 div.className="produit";
 
@@ -108,39 +109,46 @@ const date=maintenant.toLocaleDateString("fr-BE");
 const heure=maintenant.toLocaleTimeString("fr-BE",{hour:"2-digit",minute:"2-digit"});
 
 let tableau=`
-<table style="width:100%;border-collapse:collapse;font-family:Arial;font-size:13px;table-layout:fixed">
+<table style="width:100%;border-collapse:collapse;font-family:Arial;font-size:14px">
+
 <thead>
 <tr style="background:#1976d2;color:white">
-<th style="border:1px solid #ccc;padding:6px 8px;text-align:left">Produit</th>
-<th style="border:1px solid #ccc;padding:6px;text-align:center;width:50px">Qté</th>
+<th style="border:1px solid #ccc;padding:10px;text-align:left">Produit</th>
+<th style="border:1px solid #ccc;padding:10px;text-align:center;width:80px">Qté</th>
 </tr>
 </thead>
+
 <tbody>
 `;
 
 let ligne=0;
 
 document.querySelectorAll(".quantite").forEach(input=>{
+
 if(Number(input.value)>0){
+
 ligne++;
 const couleur=ligne%2===0?"#bbdefb":"#ffffff";
 
 tableau+=`
 <tr style="background:${couleur}">
-<td style="border:1px solid #ccc;padding:6px 8px">${escapeHTML(input.dataset.nom)}</td>
-<td style="border:1px solid #ccc;padding:6px;text-align:center;width:50px">${input.value}</td>
-</tr>`;
+<td style="border:1px solid #ccc;padding:10px">${escapeHTML(input.dataset.nom)}</td>
+<td style="border:1px solid #ccc;padding:10px;text-align:center;width:80px">${input.value}</td>
+</tr>
+`;
+
 }
+
 });
 
 tableau+=`</tbody></table>`;
 
 const messageHTML=`
+
 <div style="font-family:Arial">
 
-<div style="width:80%;margin:auto">
-
 <table style="width:100%;border-collapse:collapse;margin-bottom:20px">
+
 <tr>
 
 <td style="width:33%;text-align:left">
@@ -149,13 +157,24 @@ const messageHTML=`
 </td>
 
 <td style="width:33%;text-align:center">
-<div style="border:2px solid #4CAF50;border-radius:8px;padding:12px;background:#f7fff7;">
+
+<div style="
+border:2px solid #4CAF50;
+border-radius:8px;
+padding:12px;
+background:#f7fff7;
+">
+
 <div style="font-size:14px;color:#666">CHANTIER</div>
-<div style="font-size:18px;font-weight:bold">${chantier}</div>
+<div style="font-size:18px;font-weight:bold;color:#000">
+${chantier}
+</div>
 <div style="font-size:14px;color:#666;margin-top:4px">
 ${chantiersBEClean.find(c=>c.nom===chantier)?.adresse || ""}
 </div>
+
 </div>
+
 </td>
 
 <td style="width:33%;text-align:right">
@@ -163,13 +182,12 @@ ${date}<br>${heure}
 </td>
 
 </tr>
+
 </table>
 
 ${tableau}
 
 ${autre?`<p><b>Autre demande :</b><br>${autre}</p>`:""}
-
-</div>
 
 </div>
 `;
