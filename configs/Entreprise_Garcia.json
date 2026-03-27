@@ -5,9 +5,9 @@
     { "nom": "ASTRONOMIE", "adresse": "Avenue de l'Astronomie, 9  1210 Saint-Josse-ten-Noode" },
     { "nom": "LITS SERENI", "adresse": "Avenue Georges Henri, 303  1200 Woluwe-Saint-Lambert" },
     { "nom": "PIERRE FORRIER", "adresse": "Rue des Béguines, 18 & 104  1080 Molenbeek" },
-    { "nom": "SERENI Van Horenbeek", "adresse": "Avenue Jean Van Horenbeek, 17  1160 Auderghem" },
-    { "nom": "FIABILIS CONSULTING", "adresse": "Boulevard de l'Humanité, 233/10  1620 Drogenbos" }
-      ],
+    { "nom": "SERENI Van Horenbeek", "adresse": "Avenue Jean Van Horenbeek, 17  1160 Auderghem" }
+    
+        ],
   "produits": [
     { "nom": "Ajax citron", "image": "https://actif-service.github.io/Commande-Produits/images/Ajax%20citron.jpg" },
     { "nom": "Glass 2000 1 litre", "image": "https://actif-service.github.io/Commande-Produits/images/Glass%202000%201%20litre.jpg" },
