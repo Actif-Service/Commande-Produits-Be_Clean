@@ -39,7 +39,7 @@ function initApp(CONFIG){
   document.title = `Commande de produits - ${societe}`;
 
   // Remplir le champ société avec la valeur dynamique
-  document.getElementById("societe").value = societe;
+  document.getElementById("<b>societe</b>").value = societe;
 
   const chantierSelect = document.getElementById("chantier");
   const produitsContainer = document.getElementById("produits");
@@ -97,7 +97,7 @@ function initApp(CONFIG){
         <table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
           <tr>
             <td style="width:33%;text-align:left;">
-              <b>Société : ${societe}</b><br>
+              Société : ${societe}<br>
               <b>Demandeur :</b> ${nom}
             </td>
             <td style="width:33%;text-align:center; border: 4px solid #4CAF50; background:#f0fff0; border-radius:8px; padding:12px;">
