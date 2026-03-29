@@ -39,7 +39,7 @@ function initApp(CONFIG){
   document.title = `Commande de produits - ${societe}`;
 
   // Remplir le champ société avec la valeur dynamique
-  document.getElementById("societe").value = societe;
+  document.getElementById("societe").value = societe ;
 
   const chantierSelect = document.getElementById("chantier");
   const produitsContainer = document.getElementById("produits");
